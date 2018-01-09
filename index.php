@@ -1,14 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang=es>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Probando Bulma Css">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="Owen Wilson">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Repositorios de software libre</title>
-        <link rel="stylesheet" href="/include/css/style.css" type="text/css" />
-        <link rel="stylesheet" href="/include/css/frontpage.css" type="text/css" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="include/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="include/css/frontpage.css" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico" />
     </head>
     <body>
-    <?php include './include/header.html' ?>
+    <?php
+    include 'include/header.html'
+    ?>
     <?php
         $path = '.';
         $directories = @scandir($path);
@@ -43,14 +50,14 @@
 
         foreach ($directories as $directory) {
             if (is_dir("$path/$directory")) {
-                if ($directory <> '.' && 
-                    $directory <> '..' && 
-                    $directory <> 'lost+found' && 
-                    $directory <> 'include' && 
-                    $directory <> '.git' && 
-                    $directory <> 'node_modules' && 
+                if ($directory <> '.' &&
+                    $directory <> '..' &&
+                    $directory <> 'lost+found' &&
+                    $directory <> 'include' &&
+                    $directory <> '.git' &&
+                    $directory <> 'node_modules' &&
                     $directory <> 'logs') {
-                    
+
                     $list[] = $directory;
                 }
             }
@@ -64,7 +71,7 @@
 
             echo '<div class="block"><div class="logo">';
             echo '<a href="/' . $element . '/">';
-            echo '<img src="/include/img/distros/' . $img . '.png" alt="" title="" /></a>';
+            echo '<img src="include/img/distros/' . $img . '.png" alt="" title="" /></a>';
             echo '</div><div class="alt"><a href="/' . $element . '">' . $title . '</a></div></div>';
 
             if ($count >= 4 + rand(0, 2)) {
@@ -74,7 +81,6 @@
             $count++;
         }
     ?>
-    <?php include './include/footer.html' ?>
+    <?php include 'include/footer.html' ?>
     </body>
 </html>
-
